@@ -6,20 +6,19 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <!-- <?php include($_SERVER["DOCUMENT_ROOT"].'/Outils/header.php'); ?> -->
  <?php include ('../Outils/header.php'); ?> 
+ 
 
 <body>
 <br><br><br>
-<div id="formulaire">
-	<form method="post" action="cible.php" ng-submit="login()"> 
+	<form method="post" action="cible.php" id="formulaire"> <!--onsubmit="return v_total();"-->
 		<label for="classe">Classe: </label><input type="text" name="classe" id="classe" required /><span id="missClass"></span>
-		<label for="type">Type: </label><input type="text" name="type" id="type" required />
-		<!-- <label for="Type">Type</label><br>
-       <select name="le_type" id="le_type">
-           <option value="Héroïque">Héroïque</option>
-           <option value="Secondaire">Secondaire</option>
-           <option value="Spéciale">Spéciale</option>
-           <option value="Monstre/boss">Monstre/boss</option>                   
-	</select> -->
+		<label for="type">Type: </label>
+       <select name="type" id="type">
+           <option value=1>Héroïque</option>
+           <option value=2">Secondaire</option>
+           <option value=3>Spéciale</option>
+           <option value=4>Monstre/boss</option>                   
+	</select>
 		<label for="hp">HP: </label><input type="text" name="hp" id="hp" required /><span id="missHp"></span>
 		<label for="mp">MP:</label><input type="text" name="mp" id="mp" required /><span id="missMp"></span>
 		<label for="atk">ATK:</label><input type="text" name="atk" id="atk" required /><span id="missAtk"></span>
@@ -27,22 +26,74 @@
 		<label for="mat">MAT:</label><input type="text" name="mat" id="mat" required /><span id="missMat"></span>
 		<label for="mdf">MDF:</label><input type="text" name="mdf" id="mdf" required /><span id="missMdf"></span>
 		<label for="agi">AGI:</label><input type="text" name="agi" id="agi" required /><span id="missAgi"></span>
-		<label for="luk">LUK:</label><input type="text" name="luk" id="luk" required /><span id="missLuk"></span><br><br>	
-		<input type="submit" value="Valider" id="bouton_validation" />	 
+		<label for="luk">LUK:</label><input type="text" name="luk" id="luk" required /><span id="missLuk"></span><br><br>
+		<label for="total">Total:</label><input type="text" name="total" id="total" required readonly /><span id="missTotal"></span><br><br>
+		<input type="submit" value="Valider" id="bouton_validation" onClick="v_total();" />	 
 	</form>
-</div>
+<script src="Validation.js" type="text/javascript"></script>
 
-<script>
-	var formValid = document.getElementById('bouton_validation');
+<style type="text/css">
+	table {
+		border-collapse:collapse;
+		width:100%;
+		color:#d96459;
+		font-family:monospace;
+		font-size:25px;
+		text-align:left;
+	}
+	th {
+		background-color: #d96459;
+		color: white;
+	}
+	tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+
+<table> 
+	<tr>
+		<th>idClasse</th>
+		<th>Nom</th>
+		<th>Type</th>		
+		<th>HP</th>
+		<th>MP</th>
+		<th>ATK</th>
+		<th>DEF</th>
+		<th>MAT</th>
+		<th>MDF</th>
+		<th>AGI</th>
+		<th>LUK</th>
+		<th>Total</th> 
+	</tr>
+<?php
+
+$mysqli = new mysqli('localhost', 'root', '', 'dissidious_db');
+        $mysqli->set_charset("utf8");
+        $requete = 'SELECT * FROM classe';
+        $resultat = $mysqli->query($requete);
+        while ($ligne = $resultat->fetch_assoc()) {
+            echo '<tr><td>'. $ligne['idClasse'].'</td><td>'.$ligne['nom'].'</td><td>'.$ligne['type'].'</td><td>'.$ligne['hp'].'</td><td>'.$ligne['mp'].'</td><td>'
+			.$ligne['atk'].'</td><td>'.$ligne['def'].'</td><td>'.$ligne['mat'].'</td><td>'.$ligne['mdf'].'</td><td>'.$ligne['agi'].'</td><td>'
+			.$ligne['luk'].'</td><td>'.$ligne['total'].'</td></tr>';            
+        }
+		echo '</table>';
+        $mysqli->close();		
+?>
+</table>
+    
+	
+
+ 
+
+
+
+
+	<!--var formValid = document.getElementById('bouton_validation');
 	var classe = document.getElementById('classe');
 	var missClass = document.getElementById('missClass');
 	var class_valid = /^[A-Za-z]/;
-	
-	var hp = document.getElementById('hp');
-	/*console.log(hp);*/
+
+	var hp = document.getElementById('hp');	
 	var missHp = document.getElementById('missHp');
-	var hp_valid = /^[0-9]/
-	
+	var hp_valid = /^[0-9]/	
 	
 	var mp = document.getElementById('mp')
 	var missMp = document.getElementById('missMp')
@@ -73,11 +124,15 @@
 	var luk_valid = /^[0-9]/
 	
 	
+	-->
+	<!--<script>
+	var formValid = document.getElementById('bouton_validation');
 	formValid.addEventListener('click', validation_classe);
+	</script>
 	
 	
 	
-	function validation_classe(event){
+	<!--/*function validation_classe(event){
 		if (classe.validity.valueMissing){
 			event.preventDefault();
 			missClass.textContent = 'Nom manquant';
@@ -98,6 +153,17 @@
 			missHp.textContent = 'Rentrez un nombre !';
 			missHp.style.color = 'red';
 		}
+		else if (hp_valid.test(hp.value) == true){
+			var type = document.getElementById('type').options[document.getElementById('type').selectedIndex].value;
+			console.log(type);
+			if (type != 4){
+				if (parseInt(hp.value, 10) > 2850){
+					event.preventDefault();
+					missHp.textContent = '2850 en max !';
+					missHp.style.color = 'red';
+				}
+			}
+		}
 		else if (mp.validity.valueMissing){
 			event.preventDefault();
 			missMp.textContent = 'MP manquant';
@@ -107,7 +173,7 @@
 			event.preventDefault();
 			missMp.textContent = 'Rentrez un nombre !';
 			missMp.style.color = 'red';
-		}
+		}		
 		else if (atk.validity.valueMissing){
 			event.preventDefault();
 			missAtk.textContent = 'ATK manquant';
@@ -168,7 +234,10 @@
 			missLuk.textContent = 'Rentrez un nombre !';
 			missLuk.style.color = 'red';
 		}
-	}	
+		document.getElementById('total').value = (parseInt(hp.value) + parseInt(mp.value) + parseInt(atk.value) + parseInt(def.value)
+		+ parseInt(mat.value) + parseInt(mdf.value) + parseInt(agi.value) + parseInt(luk.value)) ;
+	}	*/
 	
-</script>
+<!-- </script> --> -->
 </body>
+</html>

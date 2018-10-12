@@ -3,45 +3,74 @@
 
 <?php
 
-$nom = "test" ;//$_POST['classe'];
-$type = "test_type" ;//$_POST['type'];
-$hp = 212 ;//$_POST['hp'];
-$mp = 125; //$_POST['mp'];
-$atk = 14 ;//$_POST['atk'];
-$def = 10; //$_POST['def'];
-$mat = 35; //$_POST['mat'];
-$mdf = 17 ;//$_POST['mdf'];
-$agi = 36; //$_POST['agi'];
-$luk = 19; //$_POST['luk'];
-$total = 14555 ;
+$nom = $_POST['classe'];
+$choix = $_POST['type'];
+if ($choix == 1){
+$type = 'Héroïque';
+}
+elseif ($choix == 2){
+	$type = 'Secondaire';
+}
+elseif ($choix == 3){
+	$type = 'Spéciale';
+}
+else{
+	$type = 'Monstre/boss';
+}
+$hp = $_POST['hp'];
+$mp = $_POST['mp'];
+$atk = $_POST['atk'];
+$def = $_POST['def'];
+$mat = $_POST['mat'];
+$mdf = $_POST['mdf'];
+$agi = $_POST['agi'];
+$luk = $_POST['luk'];
+$total = $_POST['total'];
 
 try
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=dissidious_db;charset=utf8', 'dissidious', 'revenge');
+	$bdd = new PDO('mysql:host=localhost;dbname=dissidious_db;charset=utf8', 'root', '');
 	//$bdd = new PDO('mysql:host=89.157.211.54:3306;dbname=dissidious_db;charset=utf8', 'dissidious', 'revenge');
 }
 catch(Exception $e)
 {
         die('Erreur : '.$e->getMessage());
 }
+/*$req = ("SELECT COUNT(*) as verif_exist FROM classe WHERE nom = $nom");
+$retour  = $bdd->query->($req);
+$donnees = mysql_fetch_array($retour);
 
-$req = $bdd->prepare('INSERT INTO classe(nom, type, hp, mp, atk, def, mat, mdf, agi, luk, total) VALUES(:nom, :hp, :type, :mp, :atk, :def, :mat, :mdf, :agi, :luk, :total)');
-$req->execute(array(
-	'nom' => $nom,
-	'type' => $type,
-	'hp' => $hp,
-	'mp' => $mp,
-	'atk' => $atk,
-	'def' => $def,
-	'mat' => $mat,
-	'mdf' => $mdf,
-	'agi' => $agi,
-	'luk' => $luk,
-	'total' => $total	
-	));
-
-
-echo 'La classe a bien été ajouté !';
+if ($donnees['verif_exist']>0){
+	echo 'La classe existe déjà!';
+}
+else {*/
+	
+	$req = $bdd->prepare('INSERT INTO classe(nom, type, hp, mp, atk, def, mat, mdf, agi, luk, total) VALUES(:nom, :type, :hp, :mp, :atk, :def, :mat, :mdf, :agi, :luk, :total)');
+	$req->execute(array(
+		'nom' => $nom,
+		'type' => $type,
+		'hp' => $hp,
+		'mp' => $mp,
+		'atk' => $atk,
+		'def' => $def,
+		'mat' => $mat,
+		'mdf' => $mdf,
+		'agi' => $agi,
+		'luk' => $luk,
+		'total' => $total	
+		));
+		echo 'La classe a bien été ajouté !';
 // echo Le type renvoyé est $_POST['le_type'],  $_POST['type'];
-?>
+ 
+/* $mysqli = new mysqli('localhost', 'root', '', 'dissidious_db');
+        $mysqli->set_charset("utf8");
+        $requete = 'SELECT * FROM classe';
+        $resultat = $mysqli->query($requete);
+        while ($ligne = $resultat->fetch_assoc()) {
+            echo $ligne['idClasse'].' '.$ligne['nom'].' '.$ligne['hp'].' ';
+            echo $ligne['mp'].' '.$ligne['atk'].'<br>';
+        }
+        $mysqli->close(); */
+
+?> 
 
