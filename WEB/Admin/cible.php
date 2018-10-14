@@ -6,16 +6,16 @@
 $nom = $_POST['classe'];
 $choix = $_POST['type'];
 if ($choix == 1){
-$type = 'Héroïque';
+$type = 'Heroique';
 }
 elseif ($choix == 2){
 	$type = 'Secondaire';
 }
 elseif ($choix == 3){
-	$type = 'Spéciale';
+	$type = 'Speciale';
 }
 else{
-	$type = 'Monstre/boss';
+	$type = 'Ennemi/Monstre/boss';
 }
 $hp = $_POST['hp'];
 $mp = $_POST['mp'];
@@ -29,7 +29,7 @@ $total = $_POST['total'];
 
 try
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=dissidious_db;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=dissidious_db;charset=utf8', 'dissidious', 'revenge');
 	//$bdd = new PDO('mysql:host=89.157.211.54:3306;dbname=dissidious_db;charset=utf8', 'dissidious', 'revenge');
 }
 catch(Exception $e)

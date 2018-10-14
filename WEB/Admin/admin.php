@@ -10,14 +10,14 @@
 
 <body>
 <br><br><br>
-	<form method="post" action="cible.php" id="formulaire"> <!--onsubmit="return v_total();"-->
+	<form method="post" action="cible.php" id="formulaire" > 
 		<label for="classe">Classe: </label><input type="text" name="classe" id="classe" required /><span id="missClass"></span>
 		<label for="type">Type: </label>
        <select name="type" id="type">
-           <option value=1>Héroïque</option>
+           <option value=1>Heroique</option>
            <option value=2">Secondaire</option>
-           <option value=3>Spéciale</option>
-           <option value=4>Monstre/boss</option>                   
+           <option value=3>Speciale</option>
+           <option value=4>Ennemi/Monstre/boss</option>                   
 	</select>
 		<label for="hp">HP: </label><input type="text" name="hp" id="hp" required /><span id="missHp"></span>
 		<label for="mp">MP:</label><input type="text" name="mp" id="mp" required /><span id="missMp"></span>
@@ -28,7 +28,7 @@
 		<label for="agi">AGI:</label><input type="text" name="agi" id="agi" required /><span id="missAgi"></span>
 		<label for="luk">LUK:</label><input type="text" name="luk" id="luk" required /><span id="missLuk"></span><br><br>
 		<label for="total">Total:</label><input type="text" name="total" id="total" required readonly /><span id="missTotal"></span><br><br>
-		<input type="submit" value="Valider" id="bouton_validation" onClick="v_total();" />	 
+		<input type="submit" value="Valider" onClick="valid(); return false;"> 	 
 	</form>
 <script src="Validation.js" type="text/javascript"></script>
 
@@ -50,7 +50,7 @@
 
 <table> 
 	<tr>
-		<th>idClasse</th>
+		<!--<th>idClasse</th>-->
 		<th>Nom</th>
 		<th>Type</th>		
 		<th>HP</th>
@@ -70,7 +70,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'dissidious_db');
         $requete = 'SELECT * FROM classe';
         $resultat = $mysqli->query($requete);
         while ($ligne = $resultat->fetch_assoc()) {
-            echo '<tr><td>'. $ligne['idClasse'].'</td><td>'.$ligne['nom'].'</td><td>'.$ligne['type'].'</td><td>'.$ligne['hp'].'</td><td>'.$ligne['mp'].'</td><td>'
+            echo '</td><td>'.$ligne['nom'].'</td><td>'.$ligne['type'].'</td><td>'.$ligne['hp'].'</td><td>'.$ligne['mp'].'</td><td>'
 			.$ligne['atk'].'</td><td>'.$ligne['def'].'</td><td>'.$ligne['mat'].'</td><td>'.$ligne['mdf'].'</td><td>'.$ligne['agi'].'</td><td>'
 			.$ligne['luk'].'</td><td>'.$ligne['total'].'</td></tr>';            
         }
