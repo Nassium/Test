@@ -61,16 +61,7 @@ else {*/
 		));
 		echo 'La classe a bien été ajouté !';
 // echo Le type renvoyé est $_POST['le_type'],  $_POST['type'];
- 
-/* $mysqli = new mysqli('localhost', 'root', '', 'dissidious_db');
-        $mysqli->set_charset("utf8");
-        $requete = 'SELECT * FROM classe';
-        $resultat = $mysqli->query($requete);
-        while ($ligne = $resultat->fetch_assoc()) {
-            echo $ligne['idClasse'].' '.$ligne['nom'].' '.$ligne['hp'].' ';
-            echo $ligne['mp'].' '.$ligne['atk'].'<br>';
-        }
-        $mysqli->close(); */
+
 
 ?> 
 
