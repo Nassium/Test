@@ -205,7 +205,7 @@ function v_mat(){
 	else if (nb_valid.test(mat.value) == true){
 		var type = document.getElementById('type').options[document.getElementById('type').selectedIndex].value;		
 		if (type != 4){
-			if (parseInt(hp.value, 10) > 800){					
+			if (parseInt(mat.value, 10) > 800){					
 				missMat.textContent = '800 en max !';
 				missMat.style.color = 'red';
 				console.log("valid_mat:", valid_mat);
