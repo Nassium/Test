@@ -2,7 +2,7 @@
 <html id="home">
 <title>Accueil</title>
 <meta charset="UTF-8">
-<?php include($_SERVER["DOCUMENT_ROOT"].'/Outils/header.php'); ?>
+<?php include('./Outils/header.php'); ?>
 <body>
 
 
