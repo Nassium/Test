@@ -3,9 +3,8 @@
 <title>Admin</title>
 <meta charset="UTF-8>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="style.css">
-<!-- <?php include($_SERVER["DOCUMENT_ROOT"].'/Outils/header.php'); ?> -->
- <?php include ('../Outils/header.php'); ?> 
+<link rel="stylesheet" type="text/css" href="../style.css">
+<?php include ('../Outils/header.php'); ?> 
  
 
 <body>
