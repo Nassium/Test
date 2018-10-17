@@ -4,19 +4,19 @@
 <?php
 
 $nom = $_POST['classe'];
-$choix = $_POST['type'];
-if ($choix == 1){
-$type = 'Heroique';
+$type = $_POST['type'];
+/*if ($choix == 1){
+$type = 'Héroïque';
 }
 elseif ($choix == 2){
 	$type = 'Secondaire';
 }
 elseif ($choix == 3){
-	$type = 'Speciale';
+	$type = 'Spéciale';
 }
 else{
 	$type = 'Ennemi/Monstre/boss';
-}
+}*/
 $hp = $_POST['hp'];
 $mp = $_POST['mp'];
 $atk = $_POST['atk'];

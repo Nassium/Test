@@ -53,7 +53,7 @@ function v_hp(){
 	}
 	else if (nb_valid.test(hp.value) == true){
 		var type = document.getElementById('type').options[document.getElementById('type').selectedIndex].value;		
-		if (type != 4){
+		if (type != '4'){
 			if (parseInt(hp.value, 10) > 2850){					
 				missHp.textContent = '2850 en max !';
 				missHp.style.color = 'red';
@@ -339,7 +339,7 @@ function v_total(){
 	var total = document.getElementById('total').value = (parseInt(hp.value) + parseInt(mp.value) + parseInt(atk.value) + parseInt(def.value)
 	+ parseInt(mat.value) + parseInt(mdf.value) + parseInt(agi.value) + parseInt(luk.value)) ;				
 	var missTotal = document.getElementById('missTotal');		
-		if (type == 3){
+		if (type == 'Spéciale'){
 			if (total > 3250){			
 				missTotal.textContent = '3250 en max !';
 				missTotal.style.color = 'red';	
@@ -347,7 +347,7 @@ function v_total(){
 				
 			}			
 		}
-		else if (type == 2){
+		else if (type == 'Secondaire'){
 			if (total > 2850){			
 				missTotal.textContent = '2850 en max !';
 				missTotal.style.color = 'red';
@@ -355,7 +355,7 @@ function v_total(){
 				
 			}				
 		}
-		else if (type == 1){
+		else if (type == 'Héroïque'){
 				if (total > 3350){
 				missTotal.textContent = '3350 en max !';
 				missTotal.style.color = 'red';	

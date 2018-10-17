@@ -1,21 +1,22 @@
 <!DOCTYPE html>
+<head>
 <html id="admin">
 <title>Admin</title>
 <meta charset="UTF-8>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css" href="../style.css">
 <?php include ('../Outils/header.php'); ?> 
- 
+</head>
 
 <body>
 <br><br><br>
-	<form method="post" action="cible.php" id="formulaire" > 
+	<form method="post" action="base_send.php" id="formulaire" > 
 		<label for="classe">Classe: </label><input type="text" name="classe" id="classe" required /><span id="missClass"></span>
 		<label for="type">Type: </label>
        <select name="type" id="type">
-           <option value=1>Heroique</option>
-           <option value=2">Secondaire</option>
-           <option value=3>Speciale</option>
+           <option value=Héroïque>Héroïque</option>
+           <option value=Secondaire>Secondaire</option>
+           <option value=Spéciale>Spéciale</option>
            <option value=4>Ennemi/Monstre/boss</option>                   
 	</select>
 		<label for="hp">HP: </label><input type="text" name="hp" id="hp" required /><span id="missHp"></span>
@@ -31,25 +32,8 @@
 	</form>
 <script src="Validation.js" type="text/javascript"></script>
 
-<style type="text/css">
-	table {
-		border-collapse:collapse;
-		width:100%;
-		color:#d96459;
-		font-family:monospace;
-		font-size:25px;
-		text-align:left;
-	}
-	th {
-		background-color: #d96459;
-		color: white;
-	}
-	tr:nth-child(even) {background-color: #f2f2f2;}
-</style>
-
-<table> 
-	<tr>
-		<!--<th>idClasse</th>-->
+<!--<table> 
+	<tr>		
 		<th>Nom</th>
 		<th>Type</th>		
 		<th>HP</th>
@@ -61,21 +45,7 @@
 		<th>AGI</th>
 		<th>LUK</th>
 		<th>Total</th> 
-	</tr>
-<?php
-
-$mysqli = new mysqli('localhost', 'dissidious', 'revenge', 'dissidious_db');
-        $mysqli->set_charset("utf8");
-        $requete = 'SELECT * FROM classe';
-        $resultat = $mysqli->query($requete);
-        while ($ligne = $resultat->fetch_assoc()) {
-            echo '<tr><td>'.$ligne['nom'].'</td><td>'.$ligne['type'].'</td><td>'.$ligne['hp'].'</td><td>'.$ligne['mp'].'</td><td>'
-			.$ligne['atk'].'</td><td>'.$ligne['def'].'</td><td>'.$ligne['mat'].'</td><td>'.$ligne['mdf'].'</td><td>'.$ligne['agi'].'</td><td>'
-			.$ligne['luk'].'</td><td>'.$ligne['total'].'</td></tr>';            
-        }
-		echo '</table>';
-        $mysqli->close();		
-?>
-</table>  
+	</tr>-->
+<?php include ('../Outils/read_base_classe.php'); ?>   
 </body>
 </html>

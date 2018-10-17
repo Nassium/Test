@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html id="home">
+<head>
 <title>Accueil</title>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
 <?php include('./Outils/header.php'); ?>
+</head>
+
 <body>
-
-
-
-
-
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
-
+<br><br>
+<?php include('./Outils/menu_index.php'); ?>
   <!-- Project Section -->
   <div class="w3-container w3-padding-32" id="projects">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
@@ -94,5 +94,8 @@
 <!-- End page content -->
 </div>
 
+
+		
+	
 </body>
 </html>
