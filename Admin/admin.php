@@ -32,20 +32,6 @@
 	</form>
 <script src="Validation.js" type="text/javascript"></script>
 
-<!--<table> 
-	<tr>		
-		<th>Nom</th>
-		<th>Type</th>		
-		<th>HP</th>
-		<th>MP</th>
-		<th>ATK</th>
-		<th>DEF</th>
-		<th>MAT</th>
-		<th>MDF</th>
-		<th>AGI</th>
-		<th>LUK</th>
-		<th>Total</th> 
-	</tr>-->
 <?php include ('../Outils/read_base_classe.php'); ?>   
 </body>
 </html>
