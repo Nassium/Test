@@ -17,7 +17,7 @@
       <h3>Nom défini par le joueur</h3>
       <p class="w3-opacity">Chevalier-Assassin</p>
       <p>Il est le digne prince du Pays de Norowa.</p>
-      <p><button class="w3-button w3-light-grey w3-block">En savoir plus</button></p>
+      <p> <a href="Wesley.php"<button class="w3-button w3-light-grey w3-block">En savoir plus</button></a></p>	  
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <img src="/img/Raigel.png" alt="Raigel" style="width:100%">
@@ -38,11 +38,12 @@
       <p><button class="w3-button w3-light-grey w3-block">En savoir plus</button></p>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="/w3images/team4.jpg" alt="Dan" style="width:100%">
-      <h3>Dan Star</h3>
-      <p class="w3-opacity">Architect</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      <img src="/img/Krain.png" alt="Raigel" style="width:100%">
+	  <img src="/img/Krain_char.png" alt="Raigel" style="width:100%">
+      <h3>Krain</h3>
+      <p class="w3-opacity">Pas encore décidé</p>
+      <p></p>
+      <p><button class="w3-button w3-light-grey w3-block">En savoir plus</button></p>
     </div>
   </div>
 </body>
