@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-<!--<link rel="stylesheet" type="text/css" href="/style.css">-->
 <ul id="menu">
 	<li><a href="#">Children Of memories</a>
 		<ul>
