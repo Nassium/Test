@@ -19,7 +19,7 @@
   
 	<script src="Nassim.js" type="text/javascript"></script>
 	<input style="position: right;" type="submit" value="Color" onClick="couleur();"> 
-	
+	<input type="submit" value="Quiz" onClick="valid(); return false;"> 	 
 	
 <img src="img/ronaldo.png" align="left"/>
 </div> 
