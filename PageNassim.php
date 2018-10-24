@@ -18,7 +18,7 @@
   
 	<script src="Nassim.js" type="text/javascript"></script>
 	<input style="position: right;" type="submit" value="Color" onClick="couleur();"> 
-	<input type="submit" value="Quiz" onClick="valid(); return false;"> 	 
+	<input type="button" value="Formulaire" onClick=(window.location='Formulaire.php')> 	 
 	
 <img src="img/ronaldo.png" align="left"/>
 </div> 
