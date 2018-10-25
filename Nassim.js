@@ -16,15 +16,12 @@ function v_nom(){
 	var missClass = document.getElementById('missClass'); // Recup du span du champ nom
 	var class_valid = /^[A-Za-z]/; // Vérification que le nom est bien constitué de lettres et non de chiffres
 		if (nom.validity.valueMissing){	// Utilisateur ne rentrant aucune valeur au moment du clic
-			missClass.textContent = 'Nom manquant'; // Affichage du texte de restriction 
-			missClass.style.color = 'red'; // Couleur du texte de restriction 
-			console.log("valid_nom:", valid_nom); // Affichage dans la console Firefox ou Google Chrome de la valeur de valid_nom
+			missClass.textContent = 'Nom manquant'; // Aucun id "MissClass"
+			missClass.style.color = 'red'; // Aucun id "MissClass"			
 		}
 		else if (nom.test(nom.value) == false){ // Si la valeur n'est pas valide 
-			missClass.textContent = 'Rentrez un mot !'; 
-			missClass.style.color = 'red';
-			console.log("valid_nom:", valid_nom);
-			
+			missClass.textContent = 'Rentrez un mot !'; // Aucun id "MissClass"
+			missClass.style.color = 'red'; // Aucun id "MissClass"					
 		}
 		else {
 			missClass.textContent = '';
@@ -45,14 +42,11 @@ function v_prenom(){
 		}
 		else if (prenom.test(prenom.value) == false){ // ta variable prenom ne peut pas utiliser la méthode test, c'est ta variable qui définit ta restri qui peut
 			prenom.textContent = 'Rentrez un mot !'; 
-			mmissPrenom.style.color = 'red';
-			console.log("valid_prenom:", valid_prenom);
-			
+			missPrenom.style.color = 'red';						
 		}
 		else {
 			prenom.textContent = '';
-			valid_nom = true;
-			console.log("valid_prenom:", valid_prenom);
+			valid_nom = true;			
 		}
 		
 	}
@@ -62,9 +56,8 @@ function v_email(){
 		var missEmail = document.getElementById('missEmail'); // Recup du span du champ email
 	    /*Ta variable email écrase celle du haut du coup celle du haut n'existe plus */var email = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/; // Vérification que l'email est composé que de lettre, chiffre et " . - _ " et qu'il contient un @
 		   /*Du coup il peut pas tester la validité car il utilise la deuxième variable */if (email.validity.valueMissing){	// Utilisateur ne rentrant aucune valeur au moment du clic
-			missClass.textContent = 'email manquant'; // Affichage du texte de restriction 
-			missClass.style.color = 'red'; // Couleur du texte de restriction 
-			console.log("valid_email:", valid_email); // Affichage dans la console Firefox ou Google Chrome de la valeur de valid_email
+			missClass.textContent = 'email manquant'; // Aucun id "MissClass"
+			missClass.style.color = 'red'; // Aucun id "MissClass"			
 			}
 		   
 		   if(!email.test(champ.value))
