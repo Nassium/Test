@@ -33,7 +33,7 @@
 		<br><br><br>
 		
 		<!-- onClick = valid(); mais tu n'as aucune fonction valid() dans ton js -->
-		<input type="submit" value="Valider" onClick="valid(); return false;"> 	 
+		<input type="submit" value="Valider" onClick="v_prenom(); return false;"> 	 
 	</form>
 	
 </div> 

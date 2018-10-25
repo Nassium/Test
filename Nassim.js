@@ -16,15 +16,15 @@ function v_nom(){
 	var missClass = document.getElementById('missClass'); // Recup du span du champ nom
 	var class_valid = /^[A-Za-z]/; // Vérification que le nom est bien constitué de lettres et non de chiffres
 		if (nom.validity.valueMissing){	// Utilisateur ne rentrant aucune valeur au moment du clic
-			missClass.textContent = 'Nom manquant'; // Aucun id "MissClass"
-			missClass.style.color = 'red'; // Aucun id "MissClass"			
+			missNom.textContent = 'Nom manquant'; 
+			missNom.style.color = 'red'; 			
 		}
-		else if (nom.test(nom.value) == false){ // Si la valeur n'est pas valide 
-			missClass.textContent = 'Rentrez un mot !'; // Aucun id "MissClass"
-			missClass.style.color = 'red'; // Aucun id "MissClass"					
+		else if (class_valid.test(nom.value) == false){ // Si la valeur n'est pas valide 
+			missNom.textContent = 'Rentrez un mot !';
+			missNom.style.color = 'red'; 				
 		}
 		else {
-			missClass.textContent = '';
+			missNom.textContent = '';
 			valid_nom = true;
 			console.log("valid_nom:", valid_nom);
 		}
@@ -36,11 +36,10 @@ function v_prenom(){
 	var missPrenom = document.getElementById('missPrenom'); // Recup du span du champ prenom
 	var class_valid = /^[A-Za-z]/; // ta variable s'appelle class_valid mais elle n'est pas utilisée, à renommer
 		if (prenom.validity.valueMissing){	// Utilisateur ne rentrant aucune valeur au moment du clic
-			missPrenom.textContent = 'prenom manquant'; // Affichage du texte de restriction 
+			missPrenom.textContent = 'Prenom manquant'; // Affichage du texte de restriction 
 			missPrenom.style.color = 'red'; // Couleur du texte de restriction 
-			console.log("valid_prenom:", valid_prenom); // Affichage dans la console Firefox ou Google Chrome de la valeur de valid_prenom
 		}
-		else if (prenom.test(prenom.value) == false){ // ta variable prenom ne peut pas utiliser la méthode test, c'est ta variable qui définit ta restri qui peut
+		else if (class_valid.test(prenom.value) == false){ // ta variable prenom ne peut pas utiliser la méthode test, c'est ta variable qui définit ta restri qui peut
 			prenom.textContent = 'Rentrez un mot !'; 
 			missPrenom.style.color = 'red';						
 		}
