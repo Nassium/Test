@@ -7,6 +7,6 @@
 
 <body>
 <br><br>
-<?php include ('../../Outils/Dissidious/menu_dissidious_classe.php'); ?>
+<?php  //include ('../../Outils/Dissidious/menu_dissidious_classe.php'); ?>
 <?php include ('../../Outils/read_base_classe.php'); ?> 
 </body>
