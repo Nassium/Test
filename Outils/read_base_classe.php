@@ -1,5 +1,6 @@
 <table> 
-	<tr>		
+	<tr>
+		<th>Id</th>
 		<th>Nom</th>
 		<th>Type</th>		
 		<th>HP</th>
@@ -11,7 +12,7 @@
 		<th>AGI</th>
 		<th>LUK</th>
 		<th>Total</th> 
-	</tr>
+	</tr><br><br>
 <?php
 
 $mysqli = new mysqli('localhost', 'dissidious', 'revenge', 'dissidious_db');
