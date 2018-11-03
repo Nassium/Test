@@ -12,7 +12,7 @@
 		<th>AGI</th>
 		<th>LUK</th>
 		<th>Total</th> 
-	</tr><br><br>
+	</tr>
 <?php
 
 $mysqli = new mysqli('localhost', 'dissidious', 'revenge', 'dissidious_db');
@@ -20,9 +20,9 @@ $mysqli = new mysqli('localhost', 'dissidious', 'revenge', 'dissidious_db');
         $requete = 'SELECT * FROM classe';
         $resultat = $mysqli->query($requete);
         while ($ligne = $resultat->fetch_assoc()) {
-            echo '<tr><td>'.$ligne['idClasse'].'</td><td>'.$ligne['nom'].'</td><td>'.$ligne['type'].'</td><td>'.$ligne['hp'].'</td><td>'.$ligne['mp'].'</td><td>'
-			.$ligne['atk'].'</td><td>'.$ligne['def'].'</td><td>'.$ligne['mat'].'</td><td>'.$ligne['mdf'].'</td><td>'.$ligne['agi'].'</td><td>'
-			.$ligne['luk'].'</td><td>'.$ligne['total'].'</td></tr>';            
+            echo '<tr><td>'.$ligne['idClasse'].'</td><td><a href="/Classe/Dissidious/'.$ligne['nom'].'.php" class="w3-bar-item w3-button">'.$ligne['nom'].'</a></td><td>'.$ligne['type'].'</td><td>'.$ligne['hp'].'</td><td>'.
+			$ligne['mp'].'</td><td>'.$ligne['atk'].'</td><td>'.$ligne['def'].'</td><td>'.$ligne['mat'].'</td><td>'
+			.$ligne['mdf'].'</td><td>'.$ligne['agi'].'</td><td>'.$ligne['luk'].'</td><td>'.$ligne['total'].'</td></tr>';            
         }
 		echo '</table>';
         $mysqli->close();		
