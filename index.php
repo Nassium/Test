@@ -12,7 +12,7 @@
 <div class="w3-content w3-padding" style="max-width:1564px">
 <br><br>
 <?php include('./Outils/menu_index.php'); ?>
-  <!-- Project Section -->
+  <!-- Jeux -->
   <div class="w3-container w3-padding-32" id="projects">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
   </div>
@@ -21,12 +21,10 @@
     <div class="w3-col l3 m6 w3-mar">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">Children Of Memories</div>
-		<br><br><br>
-        <!--<img src="/w3images/house5.jpg" style="width:100%"> -->
+		<br><br><br>        
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/OCLjYwgE43k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
-    </div>
-    <!--<div class="w3-col l3 m6 w3-margin-bottom"> -->
+    </div>    
       <div class="w3-display-container">
         <div class="w3-display-topright w3-black w3-padding">Dissidious Revenge (Bientot disponible)</div>
 		<br><br><br>

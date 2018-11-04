@@ -1,5 +1,4 @@
-var nb_valid = /^[0-9]/
-//var formValid = document.getElementById('bouton_validation');
+var nb_valid = /^[0-9]/;
 var valid_nom = false;
 var valid_hp = false;
 var valid_mp = false;
@@ -10,20 +9,18 @@ var valid_mdf = false;
 var valid_agi = false;
 var valid_luk = false;
 var valid_total = false;
-//var all_function = Promise.all([v_nom(),v_hp(),v_mp(),v_atk(),v_def(),v_mat(),v_mdf(),v_agi(),v_luk(),v_total()]);
-//formValid.addEventListener('click', return_res);
 
 function v_nom(){
-	var classe = document.getElementById('classe');
-	var missClass = document.getElementById('missClass');
-	var class_valid = /^[A-Za-z]/;
-		if (classe.validity.valueMissing){	
-			missClass.textContent = 'Nom manquant';
-			missClass.style.color = 'red';
-			console.log("valid_nom:", valid_nom);
+	var classe = document.getElementById('classe'); // Recup de l'élement du champ nom
+	var missClass = document.getElementById('missClass'); // Recup du span du champ nom
+	var class_valid = /^[A-Za-z]/; // Vérification que le nom est bien constitué de lettres et non de chiffres
+		if (classe.validity.valueMissing){	// Utilisateur ne rentrant aucune valeur au moment du clic
+			missClass.textContent = 'Nom manquant'; // Affichage du texte de restriction 
+			missClass.style.color = 'red'; // Couleur du texte de restriction 
+			console.log("valid_nom:", valid_nom); // Affichage dans la console Firefox ou Google Chrome de la valeur de valid_nom
 		}
-		else if (class_valid.test(classe.value) == false){
-			missClass.textContent = 'Rentrez un mot !';
+		else if (class_valid.test(classe.value) == false){ // Si la valeur n'est pas valide 
+			missClass.textContent = 'Rentrez un mot !'; 
 			missClass.style.color = 'red';
 			console.log("valid_nom:", valid_nom);
 			

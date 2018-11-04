@@ -6,7 +6,10 @@
 
 <br><br><br><br>
 <body>
+	<!-- Row Page -->
   <div class="w3-row-padding w3-grayscale">
+	
+	<!-- Wesley Héros -->
     <div class="w3-col l3 m6 w3-margin-bottom">
 	  <img src="/img/WC_2_Young.png" alt="Wesley" style="width:100%"><br />
 	  <img src="/img/W_C_Young_injured.png" alt="Wesley" style="width:100%"><br />
@@ -19,6 +22,8 @@
       <p>Il est le digne prince du Pays de Norowa.</p>
       <p> <a href="Wesley.php"<button class="w3-button w3-light-grey w3-block">En savoir plus</button></a></p>	  
     </div>
+	
+	<!-- Raigel Héros -->
     <div class="w3-col l3 m6 w3-margin-bottom">
       <img src="/img/Raigel.png" alt="Raigel" style="width:100%">
 	  <img src="/img/A_Raigel_faceset_1.png" alt="Raigel" style="width:100%">
@@ -29,6 +34,8 @@
       <p>...</p>
       <p><button class="w3-button w3-light-grey w3-block">En savoir plus</button></p>
     </div>
+	
+	<!-- Firyia Héros -->
     <div class="w3-col l3 m6 w3-margin-bottom">
       <img src="/img/Firyia_true.png" alt="Raigel" style="width:100%">
 	  <img src="/img/Firyia_true_char.png" alt="Raigel" style="width:100%">
@@ -37,6 +44,8 @@
       <p>Une aventurière qui a pour but de découvrir le monde et apporter la paix à ce monde.</p>
       <p><button class="w3-button w3-light-grey w3-block">En savoir plus</button></p>
     </div>
+	
+	<!-- Krain Héros -->
     <div class="w3-col l3 m6 w3-margin-bottom">
       <img src="/img/Krain.png" alt="Raigel" style="width:100%">
 	  <img src="/img/Krain_char.png" alt="Raigel" style="width:100%">
@@ -45,6 +54,7 @@
       <p></p>
       <p><button class="w3-button w3-light-grey w3-block">En savoir plus</button></p>
     </div>
+	<!-- Fin de la page -->
   </div>
 </body>
   
