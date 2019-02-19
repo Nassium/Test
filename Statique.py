@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # La classe représentant les parties statiques du classeur
-class Structure:
+class Statique:
 	
 	def __init__(self):
 		# Création du classeur 
