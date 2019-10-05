@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
   <head>
     <title>Draw Features</title>
     <link rel="stylesheet" href="https://openlayers.org/en/v5.3.0/css/ol.css" type="text/css">
@@ -8,8 +8,8 @@
 	<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
 
   </head>
-  <body>
-    <div id="map" class="map"></div>
+  <body style="height: 100%">
+    <div id="map" class="map" style="height: 95%;"></div>
     <form class="form-inline">
       <label>Geometry type &nbsp;</label>
       <select id="type">
@@ -68,6 +68,7 @@
        * Handle change event.
        */
       typeSelect.onchange = function() {
+		source.clear();
         map.removeInteraction(draw);
         addInteraction();
       };
