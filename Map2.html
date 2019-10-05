@@ -28,6 +28,14 @@
 	  var VectorLayer = ol.layer.Vector;
       var OSM = ol.source.OSM;
 	  var VectorSource = ol.source.Vector;	  
+	  var Style = ol.style;
+	  
+	  <!-- var firstStyle = new Style({ -->
+		<!-- stroke: new Stroke({ -->
+			<!-- color: 'black', -->
+			<!-- width: 3 -->
+			<!-- }) -->
+		<!-- }); -->
 
       var raster = new TileLayer({
         source: new OSM()
@@ -37,6 +45,7 @@
 
       var vector = new VectorLayer({
         source: source
+		<!-- style: firstStyle -->
       });
 
       var map = new Map({
@@ -68,7 +77,10 @@
        * Handle change event.
        */
       typeSelect.onchange = function() {
-		source.clear();
+	  <!-- console.log(typeSelect.value); -->
+	  if (typeSelect.value != 'None'){ 
+		source.clear();	  
+		}
         map.removeInteraction(draw);
         addInteraction();
       };
