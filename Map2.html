@@ -10,6 +10,7 @@
   </head>
   <body style="height: 100%">
     <div id="map" class="map" style="height: 95%;"></div>
+	<div style="float:left">
     <form class="form-inline">
       <label>Geometry type &nbsp;</label>
       <select id="type">
@@ -20,6 +21,10 @@
         <option value="None">None</option>
       </select>
     </form>
+	</div>
+	<div style="margin-left: 13%;">
+		<input type="color" name="color" id="color" value=""></input>
+	</div>
     <script>
       var Map = ol.Map;
       var View = ol.View;
@@ -28,14 +33,17 @@
 	  var VectorLayer = ol.layer.Vector;
       var OSM = ol.source.OSM;
 	  var VectorSource = ol.source.Vector;	  
-	  var Style = ol.style;
+	  var {Style, Stroke, Fill} = ol.style;
 	  
-	  <!-- var firstStyle = new Style({ -->
-		<!-- stroke: new Stroke({ -->
-			<!-- color: 'black', -->
-			<!-- width: 3 -->
-			<!-- }) -->
-		<!-- }); -->
+	  var firstStyle = new Style({ 
+		stroke: new Stroke({ 
+			color: 'black', 
+			width: 3 
+			}),
+		fill: new Fill({
+			color: 'black'
+			})
+		}); 
 
       var raster = new TileLayer({
         source: new OSM()
@@ -44,8 +52,8 @@
       var source = new VectorSource({wrapX: false});
 
       var vector = new VectorLayer({
-        source: source
-		<!-- style: firstStyle -->
+        source: source,
+		style: firstStyle
       });
 
       var map = new Map({
@@ -58,7 +66,7 @@
       });
 
       var typeSelect = document.getElementById('type');
-
+		var color = document.getElementById('color');
       var draw; // global so we can remove it later
       function addInteraction() {
         var value = typeSelect.value;
@@ -84,6 +92,11 @@
         map.removeInteraction(draw);
         addInteraction();
       };
+	  
+	  color.onchange = function(){
+		firstStyle.fill_.color_ = this.value;
+	  }
+	  
 
       addInteraction();
     </script>
