@@ -10,6 +10,7 @@ html, body {
 	float:left;
 }
 
-#colorchoice {
-	margin-left: 13%;
+.inputColor {
+    float: left;
+	margin-left: 1%;
 }

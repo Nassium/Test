@@ -1,14 +1,15 @@
-var Map = ol.Map;
-var View = ol.View;
-var Draw = ol.interaction.Draw;
-var TileLayer = ol.layer.Tile;
-var VectorLayer = ol.layer.Vector;
-var OSM = ol.source.OSM;
-var VectorSource = ol.source.Vector;	  
-var {Style, Stroke, Fill} = ol.style;
-var typeSelect = document.getElementById('type');
-var color = document.getElementById('color');
-var draw; 
+var Map = ol.Map,
+    View = ol.View,
+    Draw = ol.interaction.Draw,
+    TileLayer = ol.layer.Tile,
+    VectorLayer = ol.layer.Vector,
+    OSM = ol.source.OSM,
+    VectorSource = ol.source.Vector,
+    {Style, Stroke, Fill} = ol.style,
+    typeSelect = document.getElementById('type'),
+    color = document.getElementById('color'),
+    colorC = document.getElementById('colorC'),
+    draw;
 
 var firstStyle = new Style({ 
     stroke: new Stroke({ 
@@ -64,6 +65,10 @@ typeSelect.onchange = function() {
 
 color.onchange = function(){
     firstStyle.fill_.color_ = this.value;		
+}
+
+colorC.onchange = function(){
+    firstStyle.stroke_.color_ = this.value;
 }
 
 addInteraction();
