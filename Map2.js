@@ -6,7 +6,7 @@ var Map = ol.Map,
     OSM = ol.source.OSM,
     VectorSource = ol.source.Vector,
     {Style, Stroke, Fill} = ol.style,
-    typeSelect = document.getElementById('type'),
+    typeSelect = document.getElementById('type'),    
     color = document.getElementById('color'),
     colorC = document.getElementById('colorC'),
     draw;
@@ -72,3 +72,35 @@ colorC.onchange = function(){
 }
 
 addInteraction();
+
+$('#Wes').on('click', function(){
+    
+    var svg = $('#Test').children()[0].outerHTML;
+    var svg2 = $('#Test').children()[1].outerHTML;
+    var svg3 = $('#Test').children()[2].outerHTML;
+    
+    svg = svg.replace(/\r?\n|\r/g, '').trim();
+    svg2 = svg2.replace(/\r?\n|\r/g, '').trim();
+    svg3 = svg3.replace(/\r?\n|\r/g, '').trim();
+    
+    var canvas = document.createElement('canvas');       
+
+    canvg(canvas, svg);    
+
+    var imgData = canvas.toDataURL('image/png');
+
+      // Generate PDF
+      var doc = new jsPDF('p', 'pt', 'a4');
+      doc.addImage(imgData, 'PNG', 0, 0, 0, 0);
+    
+    canvg(canvas, svg2);
+    var imgData = canvas.toDataURL('image/png');
+    doc.addImage(imgData, 'PNG', 0, 20, 0, 0);
+    
+    canvg(canvas, svg3);
+    var imgData = canvas.toDataURL('image/png');
+    doc.addImage(imgData, 'PNG', 0, 40, 0, 0);
+    
+      doc.save('test.pdf');
+    
+});

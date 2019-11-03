@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="https://openlayers.org/en/v5.3.0/css/ol.css" type="text/css">
 	<link rel="stylesheet" href="Map2.css" type="text/css">    
 	<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/1.5/canvg.min.js"></script>
   </head>
   <body>
     <div id="map" class="map"></div>
@@ -28,6 +32,21 @@
         <input type="color" name="colorC" id="colorC" value="#000000"></input>
         <label>Couleur de contour</label>    
     </div>
+    <div id="Test">
+<svg  width="20" height="25">
+  <rect width="20" height="25" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+</svg>
+        
+        <svg  width="20" height="25">
+  <rect width="20" height="25" style="fill:rgb(64,128,128);stroke-width:10;stroke:rgb(0,0,0)" />
+</svg>
+        
+        <svg  width="20" height="25">
+  <rect width="20" height="25" style="fill:rgb(0,255,255);stroke-width:10;stroke:rgb(0,0,0)" />
+</svg>
+</div>
+
+<button id="Wes">WAZZA</button>
   </body>
 <script src="Map2.js"></script>
 </html>
