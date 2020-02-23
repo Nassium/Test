@@ -40,6 +40,20 @@ var map = new Map({
     })
 });
 
+var contextmenu = new ContextMenu({
+    width: 170,
+    defaultItems: false, // defaultItems are (for now) Zoom In/Zoom Out
+    items: [
+      {
+        text: 'Center map here'
+              
+      },
+      
+      '-' // this is a separator
+    ]
+  });
+  map.addControl(contextmenu);
+
 
 function addInteraction() {
     var value = typeSelect.value;
