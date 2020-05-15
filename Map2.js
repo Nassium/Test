@@ -45,11 +45,13 @@ var contextmenu = new ContextMenu({
     defaultItems: false, // defaultItems are (for now) Zoom In/Zoom Out
     items: [
       {
-        text: 'Center map here'
+        text: 'Center map here',
+        classname: 'wazza',
+        callback: azerty // Callback du click sur le menu
               
       },
       
-      '-' // this is a separator
+     // '-' // this is a separator
     ]
   });
   map.addControl(contextmenu);
@@ -118,3 +120,7 @@ $('#Wes').on('click', function(){
       doc.save('test.pdf');
     
 });
+
+function azerty() {
+    alert('Wazza');
+}
